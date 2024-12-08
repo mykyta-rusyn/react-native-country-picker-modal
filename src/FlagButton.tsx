@@ -124,15 +124,15 @@ export interface FlagButtonProps {
 
 export const FlagButton = ({
   allowFontScaling,
-  withEmoji,
-  withCountryNameButton,
-  withCallingCodeButton,
-  withCurrencyButton,
-  withFlagButton,
   countryCode,
   containerButtonStyle,
   onOpen,
   placeholder,
+  withEmoji = true,
+  withCountryNameButton = false,
+  withCallingCodeButton = false,
+  withCurrencyButton = false,
+  withFlagButton = true,
 }: FlagButtonProps) => {
   const { flagSizeButton: flagSize } = useTheme()
   return (
@@ -160,12 +160,4 @@ export const FlagButton = ({
       </View>
     </TouchableOpacity>
   )
-}
-
-FlagButton.defaultProps = {
-  withEmoji: true,
-  withCountryNameButton: false,
-  withCallingCodeButton: false,
-  withCurrencyButton: false,
-  withFlagButton: true,
 }
